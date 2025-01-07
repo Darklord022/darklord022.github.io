@@ -1,3 +1,3 @@
-Click here to enter  <ul>
-                    <li><a href="Medusa.html">Home</a></li>
-                    </ul>
+Click here to enter  
+                    <a href="Medusa.html">Home</a>
+                   
