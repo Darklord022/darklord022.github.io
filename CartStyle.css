@@ -1,4 +1,4 @@
-body {
+body { 
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -80,6 +80,13 @@ body {
           top: 100vh;
           left: calc(100% * var(--random-x));
         }
+        }@media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 10px;
+            }
         }
 
   
