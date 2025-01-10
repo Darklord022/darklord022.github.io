@@ -95,12 +95,4 @@ body {
                 opacity: 0;
                 transition: opacity 300ms;
               }
-              @media (max-width: 768px) {
-                body {
-                    font-size: 14px;
-                }
-                .container {
-                    padding: 10px;
-                }
-            }
-              
+             
