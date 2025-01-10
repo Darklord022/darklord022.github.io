@@ -2,148 +2,212 @@
 <html lang="en"> 
 <head> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="HomeStyle.css">
-  <title>Medusa</title>
+  <title>Responsive Medusa</title>
+  <style>
+    /* Global Styles */
+    body {
+      background-color: black;
+      color: green;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    .header img {
+      width: 50px;
+      height: 50px;
+    }
+    .header a {
+      color: green;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1rem;
+    }
+
+    .search-container {
+      text-align: center;
+      margin: 10px;
+    }
+    .search-container input {
+      width: 90%;
+      max-width: 400px;
+      padding: 8px;
+      background-color: green;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      height: 60%;
+      width: 20px;
+      background-color: green;
+      overflow-x: hidden;
+      transition: 0.5s;
+      transform: translateY(-50%);
+      border: 2px solid green;
+    }
+    .sidebar-content {
+      display: none;
+    }
+    .sidebar.open {
+      width: 70%;
+    }
+    .sidebar.open .sidebar-content {
+      display: block;
+    }
+
+    .item-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+    }
+    .item {
+      text-align: center;
+      background-color: black;
+      color: green;
+      padding: 10px;
+      border: 1px solid green;
+      border-radius: 5px;
+      width: 45%;
+      max-width: 200px;
+    }
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+    button {
+      background-color: darkblue;
+      color: whitesmoke;
+      border: none;
+      padding: 5px 10px;
+      margin-top: 5px;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      .header img {
+        width: 40px;
+        height: 40px;
+      }
+      .header a {
+        font-size: 0.9rem;
+      }
+      .item {
+        width: 90%;
+      }
+      .search-container input {
+        font-size: 0.9rem;
+      }
+      button {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header img {
+        width: 30px;
+        height: 30px;
+      }
+      .header a {
+        font-size: 0.8rem;
+      }
+      .item {
+        width: 100%;
+        padding: 5px;
+      }
+      .search-container input {
+        font-size: 0.8rem;
+        padding: 6px;
+      }
+      button {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+      }
+    }
+  </style>
 </head>
 
-<body style="background-color: black; color: green;">
-  <img src="Logo.jfif" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 74px; height: 74px;">
-  <div style="display: flex; justify-content: flex-end; gap: 30px; padding: 5px;">
-    <a href="#" style="color: green; text-decoration: none;">Wish</a>
-    <a href="#" style="color: green; text-decoration: none;">Account</a>
-    <a href="#" style="color: green; text-decoration: none;">Sign Out</a>
-    <a href="Cart.html" style="color: green; text-decoration: none;">Cart</a>
-    <img src="https://images.pond5.com/neon-glowing-green-color-gear-footage-273729388_iconl.jpeg" alt="Settings" style="width: 94px; height: 54px;">
+<body>
+  <div class="header">
+    <img src="Logo.jfif" alt="Logo">
+    <div>
+      <a href="#">Wish</a>
+      <a href="#">Account</a>
+      <a href="#">Sign Out</a>
+      <a href="Cart.html">Cart</a>
+    </div>
   </div>
 
-    <div style="flex: 2; text-align: center;">
-      <img src="https://t3.ftcdn.net/jpg/10/37/04/98/360_F_1037049820_SscRKcSwrEbmNTFqo2MlBVKsHox7mFmn.jpg" alt="Search Icon" style="width: 55px; height: 36px; vertical-align: middle; margin-right: 1px;">
-      <input type="text" id="searchInput" placeholder="Search..." style="width: 50%; padding: 6px; background-color: green; color: black;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" oninput="searchItems()">
+  <div class="search-container">
+    <img src="https://t3.ftcdn.net/jpg/10/37/04/98/360_F_1037049820_SscRKcSwrEbmNTFqo2MlBVKsHox7mFmn.jpg" alt="Search Icon" style="width: 36px; height: auto;">
+    <input type="text" id="searchInput" placeholder="Search..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" oninput="searchItems()">
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">&lt;</button>
+    <div class="sidebar-content">
+      <div class="game-container">
+        <iframe src="https://scratch.mit.edu/projects/1114816637/embed" allowtransparency="true"></iframe>
       </div>
-      <script>
-        function searchItems() {
-          const input = document.getElementById('searchInput').value.toLowerCase();
-          const items = document.querySelectorAll('.item');
-          items.forEach(item => {
-        const itemName = item.querySelector('h2').textContent.toLowerCase();
-        if (itemName.includes(input)) {
-          item.parentElement.style.display = '';
-        } else {
-          item.parentElement.style.display = 'none';
-        }
-          });
-        }
-      </script>
-
-  <div class="sidebar" id="sidebar" style="position: fixed; top: 0; right: 0; height: 50%; width: 20px; background-color: #333; color: black; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
-    <button class="toggle-btn" id="toggleBtn" style="position: absolute; top: 20px; right: -25px; background-color: #333; color: black; border: none; cursor: pointer; padding: 10px;">&lt;</button>
-    <div class="sidebar-content" style="padding: 15px; display: none;"></div>
-      
-    
-     
-      <div class="game-container"> 
-        <iframe src="https://scratch.mit.edu/projects/1114816637/embed" allowtransparency="true" style="width: 550px; height: 430px; border: none; background-color: black;"></iframe> 
-       </div>
     </div>
-  
+  </div>
 
-  
-  <script> <!-- Sidebar Toggle -->
+  <div class="item-container">
+    <div class="item">
+      <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" alt="Mechanical Mouse">
+      <h2>Mechanical Mouse</h2>
+      <p>$30</p>
+      <button onclick="addToCart('Mechanical Mouse', 30);">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="https://i.pcmag.com/imagery/reviews/01LnwPzDtlJP9XzLBk9qdbq-1.fit_lim.size_919x518.v1613506210.png" alt="Keyboard">
+      <h2>Keyboard</h2>
+      <p>$130</p>
+      <button onclick="addToCart('Keyboard', 130);">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.getElementById('toggleBtn');
-    const sidebarContent = document.querySelector('.sidebar-content');
 
     toggleBtn.addEventListener('click', () => {
-      if (sidebarContent.style.display === 'none') {
-      sidebar.style.width = '550px';
-      sidebarContent.style.display = 'block';
-      toggleBtn.textContent = '-->';
-      toggleBtn.style.backgroundColor = '#333';
-      } else {
-      sidebar.style.width = '20px';
-      sidebarContent.style.display = 'none';
-      toggleBtn.textContent = '<--';
-      toggleBtn.style.backgroundColor = '#333';
-      }
+      sidebar.classList.toggle('open');
+      toggleBtn.textContent = sidebar.classList.contains('open') ? '-->' : '<--';
     });
 
-    // Position the bar in the middle right
-    sidebar.style.top = '50%';
-    sidebar.style.transform = 'translateY(-50%)';
-    // Set green background color for the sidebar
-    sidebar.style.backgroundColor = 'green';
-  
-    sidebar.style.border = '2px solid green';
-    </script>
-  </script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const numberOfGears = 5;
-      const gears = [];
-      for (let i = 0; i < numberOfGears; i++) {
-        const gear = document.createElement('div');
-        gear.classList.add('gear');
-        gear.style.setProperty('--random-x', Math.random());
-        gear.style.animationDelay = `${Math.random() * 5}s`;
-        document.body.appendChild(gear);
-        gears.push(gear);
-      }
-
-      const toggleGearsBtn = document.createElement('button');
-      toggleGearsBtn.textContent = 'Toggle Gears';
-      toggleGearsBtn.style.position = 'fixed';
-      toggleGearsBtn.style.bottom = '10px';
-      toggleGearsBtn.style.right = '10px';
-      document.body.appendChild(toggleGearsBtn);
-// remember the state of the gears visibility 
-      let gearsVisible = JSON.parse(localStorage.getItem('gearsVisible')) ?? true;
-      gears.forEach(gear => {
-        gear.style.display = gearsVisible ? 'block' : 'none';
-      });
-
-      toggleGearsBtn.addEventListener('click', () => {
-        gearsVisible = !gearsVisible;
-        gears.forEach(gear => {
-          gear.style.display = gearsVisible ? 'block' : 'none';
-        });
-        localStorage.setItem('gearsVisible', JSON.stringify(gearsVisible));
-      });
-    });
-  </script>
-<!-- Items  -->
-  <div class="item-container" style="display: flex; justify-content: center;justify-self: center; align-items: center; height: 50vh;width: 130vh; border: 2px solid green; padding: 20px; background-color: black; color: green;">
-    <table border="1px" style="border-collapse: collapse;">
-      <tr>
-        <th>
-          <div class="item" style="text-align: center; padding: 40px;">
-            <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" alt="Mechanical Mouse" width="150px" height="160px">
-            <h2>Mechanical Mouse</h2>
-            <p>$30</p>
-            <button onclick="addToCart('Mechanical Mouse', 30);" style="background-color: darkblue; color: whitesmoke;">Add to Cart</button>
-          </div>
-        </th>
-        <th>
-          <div class="item" style="text-align: center;padding: 40px">
-            <img src="https://i.pcmag.com/imagery/reviews/01LnwPzDtlJP9XzLBk9qdbq-1.fit_lim.size_919x518.v1613506210.png" alt="Keyboard" width="150px" height="160px">
-            <h2>Keyboard</h2>
-            <p>$130</p>
-            <button onclick="addToCart('Keyboard', 130);" style="background-color: darkblue; color: whitesmoke;">Add to Cart</button>
-          </div>
-        </th>
-      </tr>
-    </table>
-  </div>
-
-<!--Cart Functionality-->
-  <script>
     function addToCart(item, price) {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ item, price , quantity: 1 });
+      cart.push({ item, price, quantity: 1 });
       localStorage.setItem('cart', JSON.stringify(cart));
       alert(`${item} added to cart!`);
+    }
+
+    function searchItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        const itemName = item.querySelector('h2').textContent.toLowerCase();
+        item.style.display = itemName.includes(input) ? '' : 'none';
+      });
     }
   </script>
 </body>
 </html>
-
