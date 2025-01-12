@@ -80,15 +80,7 @@ body {
           top: 100vh;
           left: calc(100% * var(--random-x));
         }
-        }@media (max-width: 768px) {
-            body {
-                font-size: 14px;
-            }
-            .container {
-                padding: 10px;
-            }
         }
-
   
 body {
           margin: 0;
