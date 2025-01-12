@@ -11,12 +11,35 @@
   <div style="display: flex; justify-content: flex-end; gap: 30px; padding: 5px;">
     <a href="#" style="color: green; text-decoration: none;">Wish</a>
     <a href="#" style="color: green; text-decoration: none;">Account</a>
-    <a href="#" style="color: green; text-decoration: none;">Sign Out</a>
     <a href="Cart.html" style="color: green; text-decoration: none;">Cart</a>
     
-    <img src="https://images.pond5.com/neon-glowing-green-color-gear-footage-273729388_iconl.jpeg" alt="Settings" style="width: 94px; height: 54px;" class="settings-icon">
-  
-  </div>
+    <div class="dropdown"></div>
+      <img src="https://images.pond5.com/neon-glowing-green-color-gear-footage-273729388_iconl.jpeg" alt="Settings" style="width: 94px; height: 54px; cursor: pointer;" class="settings-icon">
+      <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
+      <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
+      <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+      <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector('.settings-icon').addEventListener('click', function() {
+      const dropdownContent = this.nextElementSibling;
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+      });
+
+      window.onclick = function(event) {
+      if (!event.target.matches('.settings-icon')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        for (let i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.style.display === 'block') {
+          openDropdown.style.display = 'none';
+        }
+        }
+      }
+      };
+    </script>
 
     <div style="flex: 2; text-align: center;">
       <img src="https://t3.ftcdn.net/jpg/10/37/04/98/360_F_1037049820_SscRKcSwrEbmNTFqo2MlBVKsHox7mFmn.jpg" alt="Search Icon" style="width: 55px; height: 36px; vertical-align: middle; margin-right: 1px;">
