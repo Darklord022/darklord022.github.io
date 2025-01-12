@@ -95,4 +95,9 @@ body {
                 opacity: 0;
                 transition: opacity 300ms;
               }
-             
+              @media (max-width: 600px) {
+                .settings-icon {
+                  width: 47px;
+                  height: 27px;
+                }
+              }
