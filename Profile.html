@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link rel="stylesheet" href="ProfileStyle.css">
+    <title>Profile Settings</title>
+    </head>
+    <body> 
+        <header>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="#">Map & contact </a></li>
+                    <li><a href="#">About us</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <div class="dropdown"></div> <!-- This is the setting-->
+      <img src="https://images.pond5.com/neon-glowing-green-color-gear-footage-273729388_iconl.jpeg" alt="Settings" style="width: 94px; height: 54px; cursor: pointer;" class="settings-icon">
+      <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
+      <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
+      <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+      <a href="Login.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
+      </div>
+      <script> // Setting Dropdown
+        document.querySelector('.settings-icon').addEventListener('click', function() {
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+  
+        window.onclick = function(event) {
+        if (!event.target.matches('.settings-icon')) {
+          const dropdowns = document.getElementsByClassName('dropdown-content');
+          for (let i = 0; i < dropdowns.length; i++) {
+          const openDropdown = dropdowns[i];
+          if (openDropdown.style.display === 'block') {
+            openDropdown.style.display = 'none';
+          }
+          }
+        }
+        };
+      </script>
+
+    </div>
+        <div class="container">
+            <h2>Profile Settings</h2>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="value" id="username">JohnDoe</div>
+                    <input type="text" id="usernameInput" style="display:none;" value="JohnDoe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="value" id="email">john.doe@example.com</div>
+                    <input type="email" id="emailInput" style="display:none;" value="john.doe@example.com">
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const savedEmail = localStorage.getItem('email');
+                            if (savedEmail) {
+                                document.getElementById('email').textContent = savedEmail;
+                                document.getElementById('emailInput').value = savedEmail;
+                            } else {
+                                fetch('https://example.com/get-email')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        document.getElementById('email').textContent = data.email;
+                                        document.getElementById('emailInput').value = data.email;
+                                    })
+                                    .catch(error => console.error('Error fetching email:', error));
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="editButton">Edit</button>
+                    <button type="submit" id="saveButton" style="display:none;">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            document.getElementById('editButton').addEventListener('click', function() {
+                document.getElementById('username').style.display = 'none';
+                document.getElementById('email').style.display = 'none';
+                document.getElementById('usernameInput').style.display = 'block';
+                document.getElementById('emailInput').style.display = 'block';
+                document.getElementById('editButton').style.display = 'none';
+                document.getElementById('saveButton').style.display = 'block';
+            });
+
+            document.getElementById('profileForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const username = document.getElementById('usernameInput').value;
+                const email = document.getElementById('emailInput').value;
+
+                document.getElementById('username').textContent = username;
+                document.getElementById('email').textContent = email;
+
+                localStorage.setItem('username', username);
+                localStorage.setItem('email', email);
+
+                document.getElementById('username').style.display = 'block';
+                document.getElementById('email').style.display = 'block';
+                document.getElementById('usernameInput').style.display = 'none';
+                document.getElementById('emailInput').style.display = 'none';
+                document.getElementById('editButton').style.display = 'block';
+                document.getElementById('saveButton').style.display = 'none';
+            });
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const savedUsername = localStorage.getItem('username');
+                if (savedUsername) {
+                    document.getElementById('username').textContent = savedUsername;
+                    document.getElementById('usernameInput').value = savedUsername;
+                }
+            });
+        </script>
+    </body>
+</html>
