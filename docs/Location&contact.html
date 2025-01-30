@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Location</title>
+    <link rel="stylesheet" href="Location&contact.css">
+</head>
+
+<body style="background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
+  <div class="content">
+  <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color: green;">
+  <img src="Medusa.jpeg" alt="Logo" style="width: 70px; height: 70px;">
+
+  <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
+ 
+    <a href="Medusa.html"style="color: black; text-decoration: none;">Home</a>
+    <a href="About-us.html"style="color: black; text-decoration: none;">About us</a>
+    <a href="Cart.html"style="color: black; text-decoration: none;">Cart</a>
+    <!-- Setting icon -->
+    <img src="SettingGear.png"
+         alt="Settings" 
+         style="width: 54px; height: 54px; cursor: pointer;" 
+         class="settings-icon">
+         <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;right: 0;top : 15px;">
+          <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
+          <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+          <a href="index.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
+          </div>
+      
+  </div>
+</div>
+<script> // Setting Dropdown
+      document.querySelector('.settings-icon').addEventListener('click', function() {
+      const dropdownContent = this.nextElementSibling;
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+      });
+
+      window.onclick = function(event) {
+      if (!event.target.matches('.settings-icon')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        for (let i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.style.display === 'block') {
+          openDropdown.style.display = 'none';
+        }
+        }
+      }
+      };
+    </script>
+
+
+    <div class="container">
+        <h1>Our Location</h1>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d468.25506782924464!2d57.52854011510952!3d-20.13235613354734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d-20.1324127958738!2d57.52843148564865!5e0!3m2!1sen!2smu!4v1737920005258!5m2!1sen!2smu"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="details">
+            <p><span class="highlight">Address:</span> Pamplemousse street, Le Hochet, Port Louis</p>
+            <p><span class="highlight">Phone:</span> +230 56784134</p>
+            <p><span class="highlight">Business Hours:</span> Mon - Fri, 9:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+</body>
+</html>

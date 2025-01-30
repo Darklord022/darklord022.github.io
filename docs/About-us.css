@@ -1,0 +1,68 @@
+body{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.logo {
+  width: 150px;
+  height: auto;
+}
+  .gear {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('Gear.png'); 
+  background-size: cover;
+  animation: fall 5s linear infinite;
+  }
+  /*Make the gear fall*/ 
+  @keyframes fall {
+  0% {
+    top: -50px;
+    left: calc(100% * var(--random-x)); 
+  }
+  100% {
+    top: 100vh;
+    left: calc(100% * var(--random-x));
+  }
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  .page-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .page-exit {
+    opacity: 1;
+  }
+  .page-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+  @media (max-width: 600px) {
+    .settings-icon {
+      width: 47px;
+      height: 27px;
+    }
+  }
+
+a {
+  padding: 9px 5px; 
+  border-radius: 6px; /* Adds rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+a:active {
+  color: #ff0000;
+}
+
+.dropdown-content {
+  z-index: 999;
+}

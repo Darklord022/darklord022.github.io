@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        About us
+    </title>
+    <link rel="stylesheet" href="About-us.css">
+</head>
+<body style="background-image: url('Background.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;color :green;">
+  <div class="content">
+  <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color: green;">
+  <img src="Medusa.jpeg" alt="Logo" style="width: 70px; height: 70px;">
+
+  <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
+ 
+    <a href="Location&contact.html"style="color: black; text-decoration: none;">Location & contact</a>
+    <a href="About-us.html"style="color: black; text-decoration: none;">About us</a>
+    <a href="Cart.html"style="color: black; text-decoration: none;">Cart</a>
+    <!-- Setting icon -->
+    <img src="SettingGear.png"
+         alt="Settings" 
+         style="width: 54px; height: 54px; cursor: pointer;" 
+         class="settings-icon">
+         <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;right: 0;top : 15px;">
+          <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
+          <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+          <a href="index.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
+          </div>
+      
+  </div>
+</div>
+    <script> // Setting Dropdown
+        document.querySelector('.settings-icon').addEventListener('click', function() {
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+  
+        window.onclick = function(event) {
+        if (!event.target.matches('.settings-icon')) {
+          const dropdowns = document.getElementsByClassName('dropdown-content');
+          for (let i = 0; i < dropdowns.length; i++) {
+          const openDropdown = dropdowns[i];
+          if (openDropdown.style.display === 'block') {
+            openDropdown.style.display = 'none';
+          }
+          }
+        }
+        };
+      </script>
+
+<script> // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebarContent = document.querySelector('.sidebar-content');
+
+    toggleBtn.addEventListener('click', () => {
+      if (sidebarContent.style.display === 'none') {
+      sidebar.style.width = '550px';
+      sidebarContent.style.display = 'block';
+      toggleBtn.textContent = '-->';
+      toggleBtn.style.backgroundColor = '#333';
+      } else {
+      sidebar.style.width = '20px';
+      sidebarContent.style.display = 'none';
+      toggleBtn.textContent = '<--';
+      toggleBtn.style.backgroundColor = '#333';
+      }
+    });
+
+    // Position the bar in the middle right
+    sidebar.style.top = '50%';
+    sidebar.style.transform = 'translateY(-50%)';
+    // Set green background color for the sidebar
+    sidebar.style.backgroundColor = 'green';
+  
+    sidebar.style.border = '2px solid green';
+    </script>
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const numberOfGears = 5;
+      const gears = [];
+      for (let i = 0; i < numberOfGears; i++) {
+        const gear = document.createElement('div');
+        gear.classList.add('gear');
+        gear.style.setProperty('--random-x', Math.random());
+        gear.style.animationDelay = `${Math.random() * 5}s`;
+        document.body.appendChild(gear);
+        gears.push(gear);
+      }
+
+      const toggleGearsBtn = document.createElement('button');
+      toggleGearsBtn.textContent = 'Toggle Gears';
+      toggleGearsBtn.style.position = 'fixed';
+      toggleGearsBtn.style.bottom = '10px';
+      toggleGearsBtn.style.right = '10px';
+      document.body.appendChild(toggleGearsBtn);
+// remember the state of the gears visibility 
+      let gearsVisible = JSON.parse(localStorage.getItem('gearsVisible')) ?? true;
+      gears.forEach(gear => {
+        gear.style.display = gearsVisible ? 'block' : 'none';
+      });
+
+      toggleGearsBtn.addEventListener('click', () => {
+        gearsVisible = !gearsVisible;
+        gears.forEach(gear => {
+          gear.style.display = gearsVisible ? 'block' : 'none';
+        });
+        localStorage.setItem('gearsVisible', JSON.stringify(gearsVisible));
+      });
+    });
+  </script>
+
+
+
+<div> 
+  <h1 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;">ABOUT US</h1>
+  <h2 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;"> We are a group of four students passionate about technology, working together to bring you a seamless shopping experience for computer parts. <br>As part of our ongoing journey, we are dedicated to building a platform that makes it easier for tech enthusiasts to find and purchase the best components.</h2>
+  <h2  style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;">We may be students, but our dedication to quality and customer satisfaction is serious. Whether you're assembling a gaming PC,<br> upgrading your setup, or replacing a part,we are here to help you find exactly what you need.</h2>
+</div>
+</body>
+
+</html>
