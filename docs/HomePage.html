@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> HomePage</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="Homestyle.css">
-        
-    </head>
-<body style= "color: green;background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
- <div> <a href="Medusa.html"><h style = "top: 0%;">Medusa</h> </a></div>  
-<div><img class="Logo"; src ="Medusa2.0.png"></div>  
-<div><h class ="MEDUSA">MEDUSA</h></div>
-<div><h class = "Dream">Build your dream</h></div>
-<div><a href="Medusa.html" class="explore-btn">Explore</a></div>
-</body>
+<head>
+    <title>HomePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Homestyle.css">
+</head>
+<body class="page" style="color: green; background-image: url('Background.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    
+    <div id="tMedusa" class="topMedusa">
+        <h1>Medusa</h1></a>
+    </div>
 
+    <div><img id="LogoImg" class="Logo" src="Medusa0.1.png"></div>  
+    <div><h1 class="MEDUSA">MEDUSA</h1></div>
+    <div><h2 class="Dream">Build your dream</h2></div>
+    <div><button id="explore-btn" class="explore-btn">Explore</button></div>
+
+    <script> 
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("explore-btn");
+            const image = document.getElementById("LogoImg"); 
+
+            button.addEventListener("click", (event) => { 
+                event.preventDefault(); // Stops immediate navigation
+
+                image.src = "Medusa2.0.png"; // Change to the second image
+
+                setTimeout(() => {
+                    window.location.href = "Medusa.html"; // Navigate to the next page after 2 seconds
+                }, 2000);
+            });
+        });
+    </script>
+
+</body>
 </html>

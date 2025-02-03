@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="Medusa.css">
 </head>
 
-<body style="background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
+<body class = "page" style="background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
   <div class="content">
   <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color: green;">
-  <img src="Medusa.jpeg" alt="Logo" style="width: 70px; height: 70px;">
+  <a href="HomePage.html"><img src="Medusa2.0.png" alt="Logo" style="width: 100px; height: 70px;cursor: pointer;"></a>
 
   <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
  
@@ -194,6 +194,40 @@
 
 <!-- Items  -->
 <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+  <!-- Product Card -->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="product-image" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+        <h3 class="product-title">Redragon K556 RGB LED</h3>
+        <h3 class="price">Price: $60</h3>
+        <h3 class="category"> Keyboard</h3>
+        <h3 class="stock">Stock : 21</h3>
+        <!-- Buy Now button -->
+        <button class="addToCart" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" class="product-image" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+        <h3 class="product-title">Mechanical Mouse</h3>
+        <h3 class="price">Price: $30</h3>
+        <h3 class="category"> Mouse</h3>
+        <h3 class="stock">Stock : 23</h3>
+        <button class="addToCart" onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="product-image" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+        <h3 class="product-title">SILVERSTONE ST1500-TI 1500W 80</h3>
+        <h3 class="price">Price: $501.64</h3>
+        <h3 class="category"> Power-Supply</h3>
+        <h3 class="stock">Stock : 17</h3>
+        <!-- Buy Now button -->
+        <button class="addToCart" onclick="addToCart('SILVERSTONE ST1500-TI 1500W 80', 501.64)">Buy Now</button>
+    </div>
+  </div>
+</div>
   
 <!--Cart Functionality-->
   <script>

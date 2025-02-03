@@ -10,28 +10,26 @@ overflow: hidden;
 
 
 }
-              .gear {
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                
-                background-size: cover;
-                animation: fall 5s linear infinite;
-                z-index: 1; /* Ensure it's below the main content */
-            }
-              /*Make the gear fall*/ 
-              @keyframes fall {
-              0% {
-                top: -50px;
-                left: calc(100% * var(--random-x)); 
-              }
-              100% {
-                top: 100vh;
-                left: calc(100% * var(--random-x));
-              }
-              }
-
-              .logo {
+.gear {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('Gear.png'); 
+  background-size: cover;
+  animation: fall 5s linear infinite;
+  }
+  /*Make the gear fall*/ 
+  @keyframes fall {
+  0% {
+    top: -50px;
+    left: calc(100% * var(--random-x)); 
+  }
+  100% {
+    top: 100vh;
+    left: calc(100% * var(--random-x));
+  }
+  }
+        .logo {
                 width: 150px;
                 height: auto;
               }
@@ -168,16 +166,18 @@ overflow: hidden;
               z-index: 999;
             }
 
-            .item :hover {
-                background-color: whitesmoke;
-            } 
-            /* To make add to cart button blue when hovered */
-            .button:hover {
-              background-color: blue;
-            }
+           
+            
          
-      
-        
+          .addToCart{
+            background-color: green;
+            
+
+          }
+          .addToCart:active {
+            color: blue;
+            
+          }
         table {
           width: 100%;
           max-width: 100%; /* Ensure it doesn’t expand beyond its container */
@@ -185,13 +185,14 @@ overflow: hidden;
         }
         
         .product-card {
-            border: 1px solid #ddd;
+            border: 3px solid green;
             padding: 15px;
-            width: 250px;
+            width: 350px;
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            background-color: #000;
         }
         
         .product-card:hover {
@@ -199,15 +200,16 @@ overflow: hidden;
         }
         
         .product-image {
-          width: 310px; /* Adjust width */
-          height: 250px; /* Adjust height */
+          width: 310px; 
+          height: 250px;
           object-fit: cover; /* Ensures the image fits without distortion */
           
         }
         
         .product-card h3 {
-            font-size: 18px;
+            font-size: 28px;
             margin: 10px 0;
+            color: green;
         }
         
         .product-card p {
