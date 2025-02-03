@@ -74,43 +74,58 @@
     <button id="apply-filters">Apply Filters</button>
   </div>
   <script>
-  function filterItems() {
+    document.addEventListener('DOMContentLoaded', function () {
+      // Attach the oninput event to the search input
+      document.getElementById('searchInput').addEventListener('input', filterItems);
+      document.getElementById('apply-filters').addEventListener('click', filterItems);
+    });
+  
+    function filterItems() {
     const searchQuery = document.getElementById('searchInput').value.toLowerCase();
     const category = document.getElementById('category-filter').value;
     const price = document.getElementById('price-filter').value;
 
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(card => {
-      const name = card.querySelector('h3').textContent.toLowerCase();
-      const productCategory = card.querySelector('h2:nth-child(3)').textContent.split(': ')[1].toLowerCase();
-      const productPrice = parseFloat(card.querySelector('h2:nth-child(4)').textContent.split('$')[1]);
+        
+        const name = card.querySelector('.product-title').textContent.toLowerCase();
+        const productCategory = card.querySelector('.category').textContent.toLowerCase();
+        const productPrice = parseFloat(card.querySelector('.price').textContent.replace('$', ''));
 
-      let isVisible = true;
+        let isVisible = true;
 
-      if (searchQuery && !name.includes(searchQuery)) {
-        isVisible = false;
-      }
-
-      if (category && productCategory !== category) {
-        isVisible = false;
-      }
-
-      if (price) {
-        if (price === 'low' && productPrice >= 100) {
-          isVisible = false;
-        } else if (price === 'medium' && (productPrice < 100 || productPrice > 500)) {
-          isVisible = false;
-        } else if (price === 'high' && productPrice <= 500) {
-          isVisible = false;
+        // Apply search query filter
+        if (searchQuery && !name.includes(searchQuery)) {
+            isVisible = false;
         }
-      }
 
-      card.style.display = isVisible ? 'block' : 'none';
+        // Apply category filter
+        if (category && !productCategory.includes(category.toLowerCase())) {
+            isVisible = false;
+        }
+
+        // Apply price filter
+        if (price) {
+            if (price === 'low' && productPrice >= 100) {
+                isVisible = false;
+            } else if (price === 'medium' && (productPrice < 100 || productPrice > 500)) {
+                isVisible = false;
+            } else if (price === 'high' && productPrice <= 500) {
+                isVisible = false;
+            }
+        }
+
+        // Show or hide the card
+        card.style.display = isVisible ? 'block' : 'none';
     });
-  }
+}
 
-  document.getElementById('apply-filters').addEventListener('click', filterItems);
-</script>
+// filter function when the user types in the search bar
+document.getElementById('searchInput').addEventListener('input', filterItems);
+
+// Apply filters 
+document.getElementById('apply-filters').addEventListener('click', filterItems);
+  </script>
 </div>
      
 
@@ -155,7 +170,7 @@
   
     sidebar.style.border = '2px solid green';
     </script>
-  </script>
+  
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -196,28 +211,29 @@
 <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
   <!-- Product Card -->
   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="product-image" alt="Redragon K556 RGB LED">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
     <div class="product-info">
-        <h3 class="product-title">Redragon K556 RGB LED</h3>
-        <h3 class="price">Price: $60</h3>
-        <h3 class="category"> Keyboard</h3>
-        <h3 class="stock">Stock : 21</h3>
-        <!-- Buy Now button -->
-        <button class="addToCart" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+      <h3 class="product-title">Redragon K556 RGB LED</h3>
+      <h3 class="price">$60</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 21</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
     </div>
   </div>
+   
   <div class="product-card">
-    <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" class="product-image" alt="Redragon K556 RGB LED">
+    <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" class="productImage" alt="Mechanical Mouse">
     <div class="product-info">
         <h3 class="product-title">Mechanical Mouse</h3>
-        <h3 class="price">Price: $30</h3>
+        <h3 class="price">$30</h3>
         <h3 class="category"> Mouse</h3>
         <h3 class="stock">Stock : 23</h3>
         <button class="addToCart" onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
     </div>
   </div>
   <div class="product-card">
-    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="product-image" alt="Redragon K556 RGB LED">
+    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="productImage" alt="SILVERSTONE ST1500-TI 1500W 80">
     <div class="product-info">
         <h3 class="product-title">SILVERSTONE ST1500-TI 1500W 80</h3>
         <h3 class="price">Price: $501.64</h3>
@@ -232,13 +248,18 @@
 <!--Cart Functionality-->
   <script>
     function addToCart(item, price) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ item, price , quantity: 1 });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${item} added to cart!`);
-      
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let existingItem = cart.find(cartItem => cartItem.item === item);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({item, price, quantity: 1 });
     }
- 
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${item} added to cart!`);
+  }
   </script>
  
   

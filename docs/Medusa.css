@@ -199,7 +199,7 @@ overflow: hidden;
             transform: scale(1.05);
         }
         
-        .product-image {
+        .productImage {
           width: 310px; 
           height: 250px;
           object-fit: cover; /* Ensures the image fits without distortion */
@@ -237,4 +237,5 @@ overflow: hidden;
       width: 100%; /* One card per row */
     }
   }
+ 
   

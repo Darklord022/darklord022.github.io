@@ -76,7 +76,7 @@
           
             sidebar.style.border = '2px solid green';
             </script>
-          </script>
+          
     <header>
         <div class="container">
             <h1>MEDUSA</h1>
@@ -105,54 +105,90 @@
                     </tr>
                 </thead>
                 <tbody id="cart-items">
-                    
                 </tbody>
             </table>
-        <script>
-            function loadCart() {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const cartItemsContainer = document.getElementById('cart-items');
-                let totalAmount = 0;
+            <button onclick="buyNow()"  id="buyButton" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 18px;position: absolute;right: 300px;">Buy Now</button>
+        </div>
+    </div>
 
-                if (cart.length === 0) {
-                    cartItemsContainer.innerHTML = '<p style="text-align: center;">Your cart is empty!</p>';
-                } else {
-                    cartItemsContainer.innerHTML = cart.map(
-                        ({ item, price, quantity }, index) => {
-                            totalAmount += price * quantity;
-                            return `
-                                <tr>
-                                    <td>${item}</td>
-                                    <td>$${price}</td>
-                                    <td>${quantity}</td>
-                                    <td>$${price * quantity}</td>
-                                    <td><button onclick="removeFromCart(${index})">Remove</button></td>
-                                </tr>
-                            `;
-                        }
-                    ).join('');
-                    cartItemsContainer.innerHTML += `
-                        <tfoot>
-                            <tr>
-                                <td colspan="3">Total</td>
-                                <td>$${totalAmount}</td>
-                                <td></td>
-                            </tr>
-                        </tfoot>
-                    `;
-                }
-            }
-        </script>
         <script>
-                function removeFromCart(index) {
-                  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                  cart.splice(index, 1); // Remove the selected item
-                  localStorage.setItem('cart', JSON.stringify(cart));
-                  loadCart(); // Refresh the cart display
-                }
-            
-                loadCart();
-                </script>
-    
+             function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            let totalAmount = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<tr><td colspan="5" style="text-align: center;">Your cart is empty!</td></tr>';
+            } else {
+                cartItemsContainer.innerHTML = cart.map(({item, price, quantity }, index) => {
+                    totalAmount += price * quantity;
+                    return `
+                        <tr>
+                            <td>${item}</td>
+                            <td>$${price}</td>
+                            <td>
+                                <button onclick="updateQuantity(${index}, -1)">-</button>
+                                ${quantity}
+                                <button onclick="updateQuantity(${index}, 1)">+</button>
+                            </td>
+                            <td>$${(price * quantity).toFixed(2)}</td>
+                            <td><button onclick="removeFromCart(${index})">Remove</button></td>
+                        </tr>
+                    `;
+                }).join('');
+
+                cartItemsContainer.innerHTML += `
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Total</strong></td>
+                            <td><strong>$${totalAmount.toFixed(2)}</strong></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                `;
+            }
+        }
+
+        function updateQuantity(index, change) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart[index].quantity + change > 0) {
+                cart[index].quantity += change;
+            } else {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+      
+        function buyNow() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const purchaseMessage = document.getElementById("purchaseMessage");
+
+    if (cart.length === 0) {
+        alert("Your cart is empty! Add items before purchasing.");
+    } else {
+        // Display the success message
+        purchaseMessage.classList.remove("hidden");
+
+        // Hide the message after 3 seconds (optional)
+        setTimeout(function() {
+            purchaseMessage.classList.add("hidden");
+        }, 3000);
+
+        localStorage.removeItem('cart');
+        loadCart();
+    }
+}
+        document.addEventListener("DOMContentLoaded", loadCart);
+        </script>
+        <div id="purchaseMessage" class="hidden">Thank you for your purchase!</div>
 </body>
 </html>
