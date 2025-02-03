@@ -239,4 +239,10 @@ overflow: hidden;
       
     }
     }
-  
+    @media (max-width: 768px) {
+      /* Mobile-specific styles */
+      .product-container{
+        width: 60px;
+        height: 60px; /* Adjust size or layout of product items */
+      }
+  }
