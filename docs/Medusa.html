@@ -129,7 +129,7 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
 </div>
      
 
-
+<!--Game here-->
   <div class="sidebar" id="sidebar" style="position: fixed; top: 0; right: 0; height: 50%; width: 20px; background-color: #333; color: black; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
     <button class="toggle-btn" id="toggleBtn" style="position: absolute; top: 20px; right: -25px; background-color: #333; color: black; border: none; cursor: pointer; padding: 10px;">&lt;</button>
     <div class="sidebar-content" style="padding: 15px; display: none;"></div>
@@ -209,7 +209,8 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
 
 <!-- Items  -->
 <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-  <!-- Product Card -->
+  <!-- Product Cards -->
+   <!-- Product Card 1-->
   <div class="product-card">
     <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
     <div class="product-info">
@@ -218,10 +219,10 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
       <h3 class="category">Keyboard</h3>
       <h3 class="stock">Stock : 21</h3>
       <!-- Buy Now button -->
-      <button class="addToCart" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
     </div>
   </div>
-   
+   <!-- Product Card 2-->
   <div class="product-card">
     <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" class="productImage" alt="Mechanical Mouse">
     <div class="product-info">
@@ -229,9 +230,10 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
         <h3 class="price">$30</h3>
         <h3 class="category"> Mouse</h3>
         <h3 class="stock">Stock : 23</h3>
-        <button class="addToCart" onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
+        <button class="addToCart" id="buyNowButton"onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
     </div>
   </div>
+  <!-- Product Card 3-->
   <div class="product-card">
     <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="productImage" alt="SILVERSTONE ST1500-TI 1500W 80">
     <div class="product-info">
@@ -240,28 +242,191 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
         <h3 class="category"> Power-Supply</h3>
         <h3 class="stock">Stock : 17</h3>
         <!-- Buy Now button -->
-        <button class="addToCart" onclick="addToCart('SILVERSTONE ST1500-TI 1500W 80', 501.64)">Buy Now</button>
+        <button class="addToCart" id="buyNowButton"onclick="addToCart('SILVERSTONE ST1500-TI 1500W 80', 501.64)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 4-->
+  <div class="product-card">
+    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/608x608/products/11293/47690/51wIFRMiMYL._AC_SX466___60536.1736520815.jpg?c=2" class="productImage" alt="CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz">
+    <div class="product-info">
+      <h3 class="product-title">CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz</h3>
+      <h3 class="price">$104.43</h3>
+      <h3 class="category">RAM</h3>
+      <h3 class="stock">Stock : 8</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz',104.43)">Buy Now</button>
+    </div>
+  </div>
+   <!-- Product Card 5-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61Q56A7UfNL._AC_SL1500_.jpg" class="productImage" alt="MageGee Portable 60% Mechanical Gaming Keyboard">
+    <div class="product-info">
+      <h3 class="product-title">MageGee Portable 60% Mechanical Gaming Keyboard</h3>
+      <h3 class="price">$29.99</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 0</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('MageGee Portable 60% Mechanical Gaming Keyboard', 29.99)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 6-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg" class="productImage" alt="CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz">
+    <div class="product-info">
+      <h3 class="product-title">CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz</h3>
+      <h3 class="price">$51.99</h3>
+      <h3 class="category">RAM</h3>
+      <h3 class="stock">Stock : 2</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz', 51.99)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 7-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/51EL514uLrL._AC_SL1000_.jpg" class="productImage" alt="Intel Core i7-14700F">
+    <div class="product-info">
+      <h3 class="product-title">Intel Core i7-14700F Desktop Processor 20 cores</h3>
+      <h3 class="price">$273.18</h3>
+      <h3 class="category">CPU</h3>
+      <h3 class="stock">Stock : 9</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i7-14700F Desktop Processor 20 cores', 273.18)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 8-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/81SVwr8Xf7L._AC_SL1500_.jpg" class="productImage" alt="ASUS TUF Gaming Radeon™ Graphics Card">
+    <div class="product-info">
+      <h3 class="product-title">ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition 16GB GDDR6 Graphics Card</h3>
+      <h3 class="price">$379.99</h3>
+      <h3 class="category">GPU</h3>
+      <h3 class="stock">Stock : 0</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition 16GB GDDR6 Graphics Card', 379.99)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 9-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61XAtpgr1lL._AC_SL1500_.jpg" class="productImage" alt="GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card">
+    <div class="product-info">
+      <h3 class="product-title">GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card</h3>
+      <h3 class="price">$294.99</h3>
+      <h3 class="category">GPU</h3>
+      <h3 class="stock">Stock : 13</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart"id="buyNowButton" onclick="addToCart('GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card', 294.99)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 10-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/817G0HRzaZL._AC_SL1500_.jpg" class="productImage" alt="ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6">
+    <div class="product-info">
+      <h3 class="product-title">ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6 </h3>
+      <h3 class="price">$304.97</h3>
+      <h3 class="category">GPU</h3>
+      <h3 class="stock">Stock : 9</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6', 304.97)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 10-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+      <h3 class="product-title">Redragon K556 RGB LED</h3>
+      <h3 class="price">$60</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 21</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 10-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+      <h3 class="product-title">Redragon K556 RGB LED</h3>
+      <h3 class="price">$60</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 21</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 10-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+      <h3 class="product-title">Redragon K556 RGB LED</h3>
+      <h3 class="price">$60</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 21</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+    </div>
+  </div>
+  <!-- Product Card 10-->
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
+    <div class="product-info">
+      <h3 class="product-title">Redragon K556 RGB LED</h3>
+      <h3 class="price">$60</h3>
+      <h3 class="category">Keyboard</h3>
+      <h3 class="stock">Stock : 21</h3>
+      <!-- Buy Now button -->
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
     </div>
   </div>
 </div>
   
 <!--Cart Functionality-->
-  <script>
-    function addToCart(item, price) {
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+
+<script>
+
+if (addToCartButton) {
+      if (outOfStock) {
+        addToCartButton.disabled = true;
+        addToCartButton.textContent = 'Out of Stock';
+      }
+    }
+  function addToCart(item, price) {
+   
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let existingItem = cart.find(cartItem => cartItem.item === item);
 
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      cart.push({item, price, quantity: 1 });
+      cart.push({ item, price, quantity: 1 });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${item} added to cart!`);
+    
+    // Set the message in the modal
+    document.getElementById("modalMessage").innerText = item + " added to cart!";
+    // Display the modal
+    document.getElementById("myModal").style.display = "block";
   }
-  </script>
- 
+
+  // Function to close the modal
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+
+  // Close the modal if the user clicks outside of the modal content
+  window.onclick = function(event) {
+    let modal = document.getElementById("myModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
   
   <div class="footer" style="display: flex; justify-content: center; align-items: center; background-color: black; color: green; padding: 10px;">
     <p>&copy; 2025 Medusa. All rights reserved.</p>

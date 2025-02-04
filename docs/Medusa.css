@@ -4,7 +4,7 @@ html, body {
   min-height: 100%; /* Ensure at least full viewport height */
   
   margin: 0; /* Remove default margin */
-overflow: hidden;
+  overflow-y: auto; /* or scroll */
   
  
 
@@ -235,6 +235,7 @@ overflow: hidden;
           }
           .product-card {
             width: 80px;
+            height: 120px;
           }
       
           .productImage {
@@ -253,3 +254,60 @@ overflow: hidden;
       .sidebar {
         height: 100%
       }
+      /* Modal background overlay */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    }
+    /* Modal Content Box */
+    .modal-content {
+      background-color: #000; /* Black background */
+      color: #0f0;            /* Green text */
+      margin: 15% auto;       /* Center the modal */
+      padding: 20px;
+      border: 1px solid #0f0; /* Green border */
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+      position: relative;
+    }
+    /* Close Button */
+    .close {
+      color: #0f0;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #fff;
+    }
+    /* Optional: Styling the Buy Now button */
+    .addToCart {
+      background-color: #000;
+      color: #0f0;
+      border: 2px solid #0f0;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .addToCart:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+    .addToCart:disabled {
+      background-color: grey;
+      color: darkgrey;
+      border: 2px solid grey;
+      cursor: not-allowed;
+    }
