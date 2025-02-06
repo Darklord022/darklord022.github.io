@@ -6,26 +6,20 @@
     <link rel="stylesheet" href="ProfileStyle.css">
     <title>Profile Settings</title>
     </head>
-    <body> 
-        <header>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="Medusa.html">Home</a></li>
-                    <li><a href="Cart.html">Cart</a></li>
-                    <li><a href="Location&contact.html">Location & contact </a></li>
-                    <li><a href="About-us.html">About us</a></li>
-                    
-                </ul>
-            </nav>
-        </header>
-        <div class="dropdown"></div> <!-- This is the setting-->
-      <img src="https://images.pond5.com/neon-glowing-green-color-gear-footage-273729388_iconl.jpeg" alt="Settings" style="width: 94px; height: 54px; cursor: pointer;" class="settings-icon">
-      <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
-      <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
-      <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
-      <a href="Login.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
-      </div>
+        <body class = "page" style="background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
+            <div class="content">
+            <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color:  rgba(7, 230, 7, 0.24);">
+            <a href="index.html"><img src="Medusa2.0.png" alt="Logo" style="width: 100px; height: 70px;cursor: pointer;"></a>
+          
+            <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
+                <a href="Medusa.html"style="color: black; text-decoration: none;">Home</a>
+              <a href="Location&contact.html"style="color: black; text-decoration: none;">Location & contact</a>
+              <a href="About-us.html"style="color: black; text-decoration: none;">About us</a>
+              <a href="Cart.html"style="color: black; text-decoration: none;">Cart</a>
+              
+            </div>
+          </div>
+          
       <script> // Setting Dropdown
         document.querySelector('.settings-icon').addEventListener('click', function() {
         const dropdownContent = this.nextElementSibling;

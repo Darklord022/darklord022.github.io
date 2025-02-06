@@ -8,29 +8,31 @@
     </title>
     <link rel="stylesheet" href="About-us.css">
 </head>
-<body style="background-image: url('Background.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;color :green;">
-  <div class="content">
-  <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color: green;">
-  <img src="Medusa.jpeg" alt="Logo" style="width: 70px; height: 70px;">
+<body class = "page" style="background-image: url('Background.jpg');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;color: green;">
+  <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color:  rgba(7, 230, 7, 0.24);">
+  <a href="index.html"><img src="Medusa2.0.png" alt="Logo" style="width: 100px; height: 70px;cursor: pointer;"></a>
 
   <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
- 
+    
+    <a href="Medusa.html"style="color: black; text-decoration: none;">Home</a>
     <a href="Location&contact.html"style="color: black; text-decoration: none;">Location & contact</a>
-    <a href="About-us.html"style="color: black; text-decoration: none;">About us</a>
     <a href="Cart.html"style="color: black; text-decoration: none;">Cart</a>
     <!-- Setting icon -->
-    <img src="SettingGear.png"
+    <img src="Gear.png"
          alt="Settings" 
          style="width: 54px; height: 54px; cursor: pointer;" 
          class="settings-icon">
-         <div class="dropdown-content" style="display: none; position: absolute; background-color: black; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;right: 0;top : 15px;">
-          <a href="Profile.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
-          <a href="#" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
-          <a href="index.html" style="color: green; text-decoration: none; display: block; padding: 12px 16px;">Logout</a>
+         <div class="dropdown-content" style="display: none; position: absolute; background-color: rgba(7, 230, 7, 0.438); min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;right: 0;top : 35px;">
+          <a href="Profile.html" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
+          <a href="#" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+          <a href="Login.html" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Login</a>
           </div>
       
   </div>
 </div>
+
+  
+<div>
     <script> // Setting Dropdown
         document.querySelector('.settings-icon').addEventListener('click', function() {
         const dropdownContent = this.nextElementSibling;
@@ -77,7 +79,7 @@
   
     sidebar.style.border = '2px solid green';
     </script>
-  </script>
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -113,13 +115,17 @@
       });
     });
   </script>
-
+</div>
 
 
 <div> 
-  <h1 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;">ABOUT US</h1>
-  <h2 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;"> We are a group of four students passionate about technology, working together to bring you a seamless shopping experience for computer parts. <br>As part of our ongoing journey, we are dedicated to building a platform that makes it easier for tech enthusiasts to find and purchase the best components.</h2>
-  <h2  style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: black;">We may be students, but our dedication to quality and customer satisfaction is serious. Whether you're assembling a gaming PC,<br> upgrading your setup, or replacing a part,we are here to help you find exactly what you need.</h2>
+  <h1 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: rgba(0, 0, 0, 0.726);">ABOUT US</h1>
+  <h2 style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: rgba(0, 0, 0, 0.726);"> 
+    We are a group of four students passionate about technology, working together to bring you a seamless shopping experience for computer parts. <br>
+    As part of our ongoing journey, we are dedicated to building a platform that makes it easier for tech enthusiasts to find and purchase the best components.</h2>
+  <h2  style="display: flex; justify-content: center;justify-self: center; align-items: center;border:2px solid green;background-color: rgba(0, 0, 0, 0.726);">
+    We may be students, but our dedication to quality and customer satisfaction is serious. Whether you're assembling a gaming PC,<br> 
+    upgrading your setup, or replacing a part,we are here to help you find exactly what you need.</h2>
 </div>
 </body>
 

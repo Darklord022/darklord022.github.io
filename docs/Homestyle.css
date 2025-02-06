@@ -81,7 +81,9 @@ body {
     .Logo {
         height: 40vh; 
     }
-
+    .topMedusa{
+        font-size: 9vw;
+    }
     .MEDUSA {
         font-size: 10vw;
     }
