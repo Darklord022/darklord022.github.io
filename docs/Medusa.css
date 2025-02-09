@@ -214,7 +214,7 @@ body {
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            background-color: #000;
+            background-color: #00000075;
         }
         
         .product-card:hover {
@@ -256,8 +256,8 @@ body {
             gap: 10px; 
           }
           .product-card {
-            width: 80px;
-            height: 120px;
+            width: 220px;
+            height: 450px;
           }
       
           .productImage {
@@ -333,3 +333,14 @@ body {
       border: 2px solid grey;
       cursor: not-allowed;
     }
+    footer { background: #333; color: #fff; padding: 20px; }
+    .footer-columns { display: flex; flex-wrap: wrap; justify-content: space-between; }
+    .footer-column { flex: 1; min-width: 200px; margin: 10px; }
+    .footer-column h4 { margin-bottom: 10px; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 6px; }
+    .footer-column ul li a { color: #fff; text-decoration: none; }
+    .newsletter { text-align: center; margin-top: 20px; }
+    .newsletter input[type="email"] { padding: 8px; width: 40%; }
+    .newsletter button { padding: 8px 12px; }
+    footer p { text-align: center; margin-top: 20px; font-size: 0.9em; }

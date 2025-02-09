@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+     body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    text-align: center; /* Center text */
+    margin: 0;
+    
+}
+        .setting {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Settings</h1>
+ 
+    
+    <div class="setting">
+        <label for="notifications">Notifications:</label>
+        <select id="notifications" name="notifications">
+            <option value="enabled">Enabled</option>
+            <option value="disabled">Disabled</option>
+        </select>
+    </div>
+    <div class="setting">
+        <label for="search-engine">Default Search Engine:</label>
+        <select id="search-engine" name="search-engine">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+        </select>
+    </div>
+    <div class="setting">
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" name="font-size" min="10" max="30" value="16">
+    </div>
+    <button type="submit">Save Settings</button>
+</body>
+</html>

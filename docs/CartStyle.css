@@ -94,6 +94,7 @@ body {
           transition: width 0.3s ease;
           overflow-x: hidden;
           box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+          z-index: 2;
       }
 
       .sidebar.expanded {
@@ -190,3 +191,24 @@ body {
             z-index: 1000;
             text-align: center;
           }
+
+          @media (max-width: 768px) {
+            .cart table {
+                width: 100%;
+                
+              
+            }
+
+          }
+          
+        a {
+          
+          
+          padding: 9px 5px; 
+          border-radius: 6px; /*  Adds rounded corners */
+          transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        a:active {
+          color: #ff0000;
+        }
+       

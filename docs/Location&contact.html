@@ -24,7 +24,7 @@
          class="settings-icon">
          <div class="dropdown-content" style="display: none; position: absolute; background-color: rgba(7, 230, 7, 0.438); min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;right: 0;top : 35px;">
           <a href="Profile.html" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Profile</a>
-          <a href="#" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Settings</a>
+          
           <a href="Login.html" style="color: black; text-decoration: none; display: block; padding: 12px 16px;">Login</a>
           </div>
       
@@ -50,6 +50,7 @@
     </script>
 
 
+
     <div class="container">
         <h1>Our Location</h1>
 
@@ -67,6 +68,55 @@
             <p><span class="highlight">Phone:</span> +230 56784134</p>
             <p><span class="highlight">Business Hours:</span> Mon - Fri, 9:00 AM - 6:00 PM</p>
         </div>
+        
     </div>
+
+    <!--Game here-->
+<div class="sidebar" id="sidebar" style="position: fixed; top: 0; right: 0; height: 50%; width: 20px; background-color: #333; color: black; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
+  <button class="toggle-btn" id="toggleBtn" style="position: absolute; top: 20px; right: -25px; background-color: #333; color: black; border: none; cursor: pointer; padding: 10px;">&lt;</button>
+  <div class="sidebar-content" style="padding: 15px; display: none;"></div>
+   
+    <div class="game-container"> 
+      <iframe src="https://scratch.mit.edu/projects/1114816637/embed" allowtransparency="true" style="width: 550px; height: 430px; border: none; background-color: black;"></iframe> 
+     </div>
+  </div>
+  <script> // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebarContent = document.querySelector('.sidebar-content');
+
+    toggleBtn.addEventListener('click', () => {
+      if (sidebarContent.style.display === 'none') {
+      sidebar.style.width = '550px';
+      sidebarContent.style.display = 'block';
+      toggleBtn.textContent = '-->';
+      toggleBtn.style.backgroundColor = '#333';
+      } else {
+      sidebar.style.width = '20px';
+      sidebarContent.style.display = 'none';
+      toggleBtn.textContent = '<--';
+      toggleBtn.style.backgroundColor = '#333';
+      }
+    });
+
+    // Position the bar in the middle right
+    sidebar.style.top = '50%';
+    sidebar.style.transform = 'translateY(-50%)';
+    // Set green background color for the sidebar
+    sidebar.style.backgroundColor = 'green';
+  
+    sidebar.style.border = '2px solid green';
+    </script>
+
+    <div><form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <h2>Contact Us</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" rows="4" required></textarea>
+      
+      <button type="submit">Send</button>
+  </form></div>
 </body>
 </html>

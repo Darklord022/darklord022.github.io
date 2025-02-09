@@ -82,7 +82,8 @@ body {
         height: 40vh; 
     }
     .topMedusa{
-        font-size: 9vw;
+        font-size: 3vw;
+        left: 10px;
     }
     .MEDUSA {
         font-size: 10vw;
@@ -97,3 +98,12 @@ body {
         padding: 10px 20px;
     }
 }
+.bg-video {
+    position: fixed;       /* Keeps it in the background */
+    top: 0;
+    left: 0;
+    width: 100%;           /* Makes the video full-width */
+    height: 100%;          /* Makes the video full-height */
+    object-fit: cover;     /* Ensures the video covers the area without distortion */
+    z-index: -1;           /* Places the video behind other content */
+  }

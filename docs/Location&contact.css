@@ -74,7 +74,7 @@
         }
          
           .Options :hover {
-            background-color: darkblue;
+            background-color: rgba(7, 230, 7, 0.411);
         }
         a {
           
@@ -93,3 +93,77 @@
           min-height: 70px;
           border-bottom: #000 3px solid;
       }
+      .contact-form {
+        background: rgba(255, 255, 255, 0.507);
+        color: #000;
+        padding: 20px;
+        border-radius: 8px;
+        width: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        justify-self: center;
+    }
+    label, input, textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        background: rgba(4, 167, 4, 0.658);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background: rgba(7, 230, 7, 0.411);
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0; /* Ensure it stretches to the bottom */
+      height: 100vh; /* Full viewport height */
+      
+    }
+  
+
+  .sidebar.expanded {
+      width: 400px;
+  }
+
+  .sidebar .toggle-btn {
+      position: absolute;
+      top: 50%;
+      left: -70px;
+      transform: translateY(-50%);
+      background-color: rgba(7, 230, 7, 0.295);
+      color: white;
+      border: 3px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+  }
+
+  .sidebar {
+    height: 100%
+  }
+  .sidebar .toggle-btn:hover {
+      background-color: purple;
+  }
+
+  .sidebar-content {
+      display: none;
+      padding: 20px;
+      color: black;
+  }
+
+  .sidebar.expanded .sidebar-content {
+      display: block;
+  }
+
+  .game-container {
+      position: relative;
+      width: 100%; /* Adjust based on screen size */
+      max-width: 800px; /* Optional max width */}
