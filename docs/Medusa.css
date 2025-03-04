@@ -80,6 +80,7 @@ body {
                 right: 0;
                 bottom: 0; /* Ensure it stretches to the bottom */
                 height: 100vh; /* Full viewport height */
+                z-index: 9999; /* Ensure it's in front of everything */
                 
               }
             

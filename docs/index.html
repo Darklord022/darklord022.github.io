@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Homestyle.css">
 </head>
-<body class="page" style="color: rgba(0, 128, 0, 0.37); background-image: url('Background1.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+<body class="page" style="color: rgba(0, 128, 0, 0.37); background-image: url('Assets/Background/Background1.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
     
     <div id="tMedusa" class="topMedusa">
         <h1>Medusa</h1></a>
     </div>
 
-    <div><img id="LogoImg" class="Logo" src="Medusa0.1.png"></div>  
+    <div><img id="LogoImg" class="Logo" src="Assets/Icons/Medusa0.1.png"></div>  
     <div><h1 class="MEDUSA">MEDUSA</h1></div>
     <div><h2 class="Dream">Build your dream</h2></div>
     <div><button id="explore-btn" class="explore-btn">Explore</button></div>
     
     <video autoplay muted loop playsinline class="bg-video">
-        <source src="BG.mp4" type="video/mp4">
+        <source src="Assets/Background_A/BG.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     <script> 
@@ -28,7 +28,7 @@
             button.addEventListener("click", (event) => { 
                 event.preventDefault(); // Stops immediate navigation
 
-                image.src = "Medusa2.0.png"; // Change to the second image
+                image.src = "Assets/Icons/Medusa2.0.png"; // Change to the second image
 
                 setTimeout(() => {
                     window.location.href = "Medusa.html"; // Navigate to the next page after 2 seconds
