@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="Medusa.css">
 </head>
 
-<body class = "page" style="background-image: url('Background1.png');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
+<body class = "page" style="background-image: url('Assets/Background/Background1.png');background-repeat: no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
   <div class="content">
   <div class="header" style="display: flex; align-items: center; justify-content: space-between; padding: -6px;background-color:  rgba(7, 230, 7, 0.24);">
-  <a href="index.html"><img src="Medusa2.0.png" alt="Logo" style="width: 100px; height: 70px;cursor: pointer;"></a>
+  <a href="index.html"><img src="Assets/Icons/Medusa2.0.png" alt="Logo" style="width: 100px; height: 70px;cursor: pointer;"></a>
 
   <div class="Options" style="display: flex; align-items: center; gap: 20px;font-size: 25px;">
  
@@ -18,7 +18,7 @@
     <a href="About-us.html"style="color: black; text-decoration: none;">About us</a>
     <a href="Cart.html"style="color: black; text-decoration: none;">Cart</a>
     <!-- Setting icon -->
-    <img src="Gear.png"
+    <img src="Assets/Icons/Gear.png"
          alt="Settings" 
          style="width: 54px; height: 54px; cursor: pointer;" 
          class="settings-icon">
@@ -51,7 +51,7 @@
     </script>
 
     <div style="flex: 2; text-align: center;padding:20px;">
-      <img src="Search2.png" alt="Search Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 1px;">
+      <img src="Assets/Icons/Search2.png" alt="Search Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 1px;">
       <input type="text" id="searchInput" placeholder="Search..." style="width: 50%; padding: 6px; background-color: rgba(7, 230, 7, 0.11); color: black;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" oninput="filterItems()">
       
   <div class="filter-bar">
@@ -213,174 +213,221 @@ document.getElementById('apply-filters').addEventListener('click', filterItems);
 <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
   <!-- Product Cards -->
    <!-- Product Card 1-->
-  <div class="product-card">
+   <div class="product-card">
+    <h4 class="category">Keyboard</h4>
+    <h3 class="product-title">Redragon K556 RGB LED</h3>
     <img src="https://m.media-amazon.com/images/I/713l5NF-c-L._AC_SL1500_.jpg" class="productImage" alt="Redragon K556 RGB LED">
     <div class="product-info">
-      <h3 class="product-title">Redragon K556 RGB LED</h3>
-      <h3 class="price">$60</h3>
-      <h3 class="category">Keyboard</h3>
-      <h3 class="stock">Stock : 21</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
+        <div style="display: flex; gap: 140px;">
+            <h3 class="price">$60</h3>
+            <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">30</font></h3>
+        </div>
+        <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon K556 RGB LED', 60)">Buy Now</button>
     </div>
-  </div>
-   <!-- Product Card 2-->
-  <div class="product-card">
+</div>
+
+<div class="product-card">
+    <h4 class="category">Mouse</h4>
+    <h3 class="product-title">Mechanical Mouse</h3>
     <img src="https://img.kwcdn.com/product/open/2024-07-08/1720417755471-e10020a4555c40a980c456d46b1c6e52-goods.jpeg?imageView2/2/w/800/q/70/format/webp" class="productImage" alt="Mechanical Mouse">
     <div class="product-info">
-        <h3 class="product-title">Mechanical Mouse</h3>
-        <h3 class="price">$30</h3>
-        <h3 class="category"> Mouse</h3>
-        <h3 class="stock">Stock : 23</h3>
-        <button class="addToCart" id="buyNowButton"onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
+        <div style="display: flex; gap: 140px;">
+            <h3 class="price">$30</h3>
+            <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">20</font></h3>
+        </div>
+        <button class="addToCart" id="buyNowButton" onclick="addToCart('Mechanical Mouse', 30)">Buy Now</button>
     </div>
-  </div>
-  <!-- Product Card 3-->
-  <div class="product-card">
-    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="productImage" alt="SILVERSTONE ST1500-TI 1500W 80">
+</div>
+
+<div class="product-card">
+    <h4 class="category">Power-Supply</h4>
+    <h3 class="product-title">SILVERSTONE ST1500-TI 1500W 80</h3>
+    <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/1280x1280/products/10837/45826/st1500-ti-package__56194.1725346841.jpg?c=2?imbypass=on" class="productImage" alt="SILVERSTONE ST1500-TI 1500W 80+ TITANIUM F-MODULAR Power Supply">
     <div class="product-info">
-        <h3 class="product-title">SILVERSTONE ST1500-TI 1500W 80</h3>
-        <h3 class="price">Price: $501.64</h3>
-        <h3 class="category"> Power-Supply</h3>
-        <h3 class="stock">Stock : 17</h3>
-        <!-- Buy Now button -->
-        <button class="addToCart" id="buyNowButton"onclick="addToCart('SILVERSTONE ST1500-TI 1500W 80', 501.64)">Buy Now</button>
+        <div style="display: flex; gap: 140px;">
+            <h3 class="price">$501.64</h3>
+            <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">17</font></h3>
+        </div>
+        <button class="addToCart" id="buyNowButton" onclick="addToCart('SILVERSTONE ST1500-TI 1500W 80+ TITANIUM F-MODULAR Power Supply', 501.64)">Buy Now</button>
     </div>
-  </div>
-  <!-- Product Card 4-->
-  <div class="product-card">
+</div>
+
+<div class="product-card">
+    <h4 class="category">RAM</h4>
+    <h3 class="product-title">CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz</h3>
     <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/608x608/products/11293/47690/51wIFRMiMYL._AC_SX466___60536.1736520815.jpg?c=2" class="productImage" alt="CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz">
     <div class="product-info">
-      <h3 class="product-title">CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz</h3>
-      <h3 class="price">$104.43</h3>
-      <h3 class="category">RAM</h3>
-      <h3 class="stock">Stock : 8</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz',104.43)">Buy Now</button>
+        <div style="display: flex; gap: 140px;">
+            <h3 class="price">$104.43</h3>
+            <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">8</font></h3>
+        </div>
+        <button class="addToCart" id="buyNowButton" onclick="addToCart('CORSAIR Vengeance RGB DDR5 RAM 16GB 6000MHz', 104.43)">Buy Now</button>
     </div>
-  </div>
-   <!-- Product Card 5-->
-  <div class="product-card">
+</div>
+
+<div class="product-card">
+    <h4 class="category">Keyboard</h4>
+    <h3 class="product-title">MageGee Portable 60% Mechanical Gaming Keyboard</h3>
     <img src="https://m.media-amazon.com/images/I/61Q56A7UfNL._AC_SL1500_.jpg" class="productImage" alt="MageGee Portable 60% Mechanical Gaming Keyboard">
     <div class="product-info">
-      <h3 class="product-title">MageGee Portable 60% Mechanical Gaming Keyboard</h3>
-      <h3 class="price">$29.99</h3>
-      <h3 class="category">Keyboard</h3>
-      <h3 class="stock">Stock : 3</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('MageGee Portable 60% Mechanical Gaming Keyboard', 29.99)">Buy Now</button>
+        <div style="display: flex; gap: 140px;">
+            <h3 class="price">$29.99</h3>
+            <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">4</font></h3>
+        </div>
+        <button class="addToCart" id="buyNowButton" onclick="addToCart('MageGee Portable 60% Mechanical Gaming Keyboard', 29.99)">Buy Now</button>
     </div>
-  </div>
-  <!-- Product Card 6-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg" class="productImage" alt="CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz">
-    <div class="product-info">
-      <h3 class="product-title">CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz</h3>
-      <h3 class="price">$51.99</h3>
-      <h3 class="category">RAM</h3>
-      <h3 class="stock">Stock : 2</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz', 51.99)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 7-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/51EL514uLrL._AC_SL1000_.jpg" class="productImage" alt="Intel Core i7-14700F">
-    <div class="product-info">
-      <h3 class="product-title">Intel Core i7-14700F Desktop Processor 20 cores</h3>
-      <h3 class="price">$273.18</h3>
-      <h3 class="category">CPU</h3>
-      <h3 class="stock">Stock : 9</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i7-14700F Desktop Processor 20 cores', 273.18)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 8-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81SVwr8Xf7L._AC_SL1500_.jpg" class="productImage" alt="ASUS TUF Gaming Radeon™ Graphics Card">
-    <div class="product-info">
-      <h3 class="product-title">ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition 16GB GDDR6 Graphics Card</h3>
-      <h3 class="price">$379.99</h3>
-      <h3 class="category">GPU</h3>
-      <h3 class="stock">Stock : 10</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition 16GB GDDR6 Graphics Card', 379.99)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 9-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61XAtpgr1lL._AC_SL1500_.jpg" class="productImage" alt="GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card">
-    <div class="product-info">
-      <h3 class="product-title">GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card</h3>
-      <h3 class="price">$294.99</h3>
-      <h3 class="category">GPU</h3>
-      <h3 class="stock">Stock : 13</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart"id="buyNowButton" onclick="addToCart('GIGABYTE GeForce RTX 3060 Gaming OC 12G (REV2.0) Graphics Card', 294.99)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 10-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/817G0HRzaZL._AC_SL1500_.jpg" class="productImage" alt="ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6">
-    <div class="product-info">
-      <h3 class="product-title">ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6 </h3>
-      <h3 class="price">$304.97</h3>
-      <h3 class="category">GPU</h3>
-      <h3 class="stock">Stock : 9</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('ASUS Dual GeForce RTX™ 4060 EVO OC Edition 8GB GDDR6', 304.97)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 11-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61V7UZLVhqL._AC_SL1500_.jpg" class="productImage" alt="Intel Core i9-14900F Desktop Processor 24 cores">
-    <div class="product-info">
-      <h3 class="product-title">Intel Core i9-14900F Desktop Processor 24 cores (8 P-cores + 16 E-cores) up to 5.8 GHz</h3>
-      <h3 class="price">$512.79</h3>
-      <h3 class="category">CPU</h3>
-      <h3 class="stock">Stock : 6</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i9-14900F Desktop Processor 24 cores (8 P-cores + 16 E-cores) up to 5.8 GHz', 512.79)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 12-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81S9D7bqEzL._AC_SL1500_.jpg" class="productImage" alt="Asus ROG Strix B550-F ATX Motherboard">
-    <div class="product-info">
-      <h3 class="product-title">Asus ROG Strix B550-F Gaming WiFi II AMD AM4 (3rd Gen Ryzen) ATX Motherboard</h3>
-      <h3 class="price">$149.99</h3>
-      <h3 class="category">Motherboard</h3>
-      <h3 class="stock">Stock :4</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('Asus ROG Strix B550-F Gaming WiFi II AMD AM4 (3rd Gen Ryzen) ATX Motherboard', 149.99)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 13-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61vF4LdktpL._AC_SL1500_.jpg" class="productImage" alt="Redragon M612 Predator RGB Gaming Mouse">
-    <div class="product-info">
-      <h3 class="product-title">Redragon M612 Predator RGB Gaming Mouse, 8000 DPI Wired Optical Mouse with 11 Programmable Buttons</h3>
-      <h3 class="price">$19.99</h3>
-      <h3 class="category">Mouse</h3>
-      <h3 class="stock">Stock : 21</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('Redragon M612 Predator RGB Gaming Mouse, 8000 DPI Wired Optical Mouse with 11 Programmable Buttons', 19.99)">Buy Now</button>
-    </div>
-  </div>
-  <!-- Product Card 14-->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/91nx+MhjjwL._AC_SL1500_.jpg" class="productImage" alt="MSI B550-A PRO ProSeries Motherboard">
-    <div class="product-info">
-      <h3 class="product-title">MSI B550-A PRO ProSeries Motherboard</h3>
-      <h3 class="price">$109.99</h3>
-      <h3 class="category">Motherboard</h3>
-      <h3 class="stock">Stock : 2</h3>
-      <!-- Buy Now button -->
-      <button class="addToCart" id="buyNowButton" onclick="addToCart('MSI B550-A PRO ProSeries Motherboard', 109.99)">Buy Now</button>
-    </div>
+</div>
+<div class="product-card">
+  <h4 class="category">RAM</h4>
+  <h3 class="product-title">CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz</h3>
+  <img src="https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_SL1500_.jpg" class="productImage" alt="CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$51.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">2</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('CORSAIR VENGEANCE LPX DDR4 RAM 32GB (2x16GB) 3200MHz', 51.99)">Buy Now</button>
   </div>
 </div>
-  
+
+<div class="product-card">
+  <h4 class="category">CPU</h4>
+  <h3 class="product-title">Intel Core i7-14700F Desktop Processor</h3>
+  <img src="https://m.media-amazon.com/images/I/51EL514uLrL._AC_SL1000_.jpg" class="productImage" alt="Intel Core i7-14700F Desktop Processor">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$273.18</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">9</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i7-14700F Desktop Processor', 273.18)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">CPU</h4>
+  <h3 class="product-title">Intel Core i9-14900F Desktop Processor</h3>
+  <img src="https://m.media-amazon.com/images/I/61V7UZLVhqL._AC_SL1500_.jpg" class="productImage" alt="Intel Core i9-14900F Desktop Processor">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$512.79</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">6</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i9-14900F Desktop Processor', 512.79)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">CPU</h4>
+  <h3 class="product-title">Intel Core i3-14100 Desktop Processor</h3>
+  <img src="https://m.media-amazon.com/images/I/61kohX2+keL._AC_SL1500_.jpg" class="productImage" alt="Intel Core i3-14100 Desktop Processor">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$109.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">4</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Intel Core i3-14100 Desktop Processor', 109.99)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">GPU</h4>
+  <h3 class="product-title">ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition</h3>
+  <img src="https://m.media-amazon.com/images/I/81SVwr8Xf7L._AC_SL1500_.jpg" class="productImage" alt="ASUS TUF Gaming Radeon RX 7600 XT OC Edition">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$379.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">0</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('ASUS TUF Gaming Radeon™ RX 7600 XT OC Edition', 379.99)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">GPU</h4>
+  <h3 class="product-title">GIGABYTE GeForce RTX 3060</h3>
+  <img src="https://m.media-amazon.com/images/I/61XAtpgr1lL._AC_SL1500_.jpg" class="productImage" alt="GIGABYTE GeForce RTX 3060 Gaming OC 12G">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$294.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">13</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('GIGABYTE GeForce RTX 3060 Gaming OC 12G', 294.99)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">GPU</h4>
+  <h3 class="product-title">ASUS Dual GeForce RTX™ 4060 EVO OC Edition</h3>
+  <img src="https://m.media-amazon.com/images/I/817G0HRzaZL._AC_SL1500_.jpg" class="productImage" alt="ASUS Dual GeForce RTX 4060 EVO OC Edition">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$304.97</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">9</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('ASUS Dual GeForce RTX™ 4060 EVO OC Edition', 304.97)">Buy Now</button>
+  </div>
+</div>
+
+<div class="product-card">
+  <h4 class="category">GPU</h4>
+  <h3 class="product-title">ASUS Graphics Card - GeForce GTX 1660</h3>
+  <img src="https://m.media-amazon.com/images/I/61BLq2qIPxL._AC_SL1500_.jpg" class="productImage" alt="ASUS Graphics Card - GeForce GTX 1660 Super OC Edition">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$287.39</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">0</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('ASUS Graphics Card - GeForce GTX 1660 Super OC Edition', 287.39)">Buy Now</button>
+  </div>
+</div>
+<div class="product-card">
+  <h4 class="category">Mouse</h4>
+  <h3 class="product-title">Logitech G502 HERO High Performance Wired Gaming Mouse</h3>
+  <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1500_.jpg" class="productImage" alt="Logitech G502 HERO High Performance Wired Gaming Mouse">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$44.8</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">25</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Logitech G502 HERO High Performance Wired Gaming Mouse', 44.8)">Buy Now</button>
+  </div>
+</div>
+<div class="product-card">
+  <h4 class="category">Motherboard</h4>
+  <h3 class="product-title">MSI B760 Gaming Plus WiFi Gaming Motherboard</h3>
+  <img src="https://m.media-amazon.com/images/I/91nx+MhjjwL._AC_SL1500_.jpg" class="productImage" alt="Logitech G502 HERO High Performance Wired Gaming Mouse">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$109.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">2</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('MSI B760 Gaming Plus WiFi Gaming Motherboard',109.99)">Buy Now</button>
+  </div>
+</div>
+<div class="product-card">
+  <h4 class="category">Motherboard</h4>
+  <h3 class="product-title">Asus ROG Strix B550-F Gaming  ATX Motherboard</h3>
+  <img src="https://m.media-amazon.com/images/I/81S9D7bqEzL._AC_SL1500_.jpg" class="productImage" alt="Logitech G502 HERO High Performance Wired Gaming Mouse">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$149.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">2</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('Asus ROG Strix B550-F Gaming WiFi II AMD AM4 (3rd Gen Ryzen) ATX Motherboard',149.99)">Buy Now</button>
+  </div>
+</div>
+<div class="product-card">
+  <h4 class="category">Power-Supply</h4>
+  <h3 class="product-title">SILVERSTONE SX800-LTI 800W 80+ TITANIUM SFX-L</h3>
+  <img src="https://cdn11.bigcommerce.com/s-idcdidwm48/images/stencil/608x608/products/10834/45813/sx800-lti-package-1__33332.1725344209.jpg?c=2" class="productImage" alt="Logitech G502 HERO High Performance Wired Gaming Mouse">
+  <div class="product-info">
+      <div style="display: flex; gap: 140px;">
+          <h3 class="price">$349.99</h3>
+          <h3 class="stock" style="position: initial; right: 40px;">Stock : <font color="red">5</font></h3>
+      </div>
+      <button class="addToCart" id="buyNowButton" onclick="addToCart('SILVERSTONE SX800-LTI 800W 80+ TITANIUM SFX-L',349.99)">Buy Now</button>
+  </div>
+</div>
 <!--Cart Functionality-->
 <div id="myModal" class="modal">
   <div class="modal-content">
@@ -410,23 +457,29 @@ if (addToCartButton) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     
-    // Set the message in the modal
-    document.getElementById("modalMessage").innerText = item + " added to cart!";
-    // Display the modal
-    document.getElementById("myModal").style.display = "block";
-  }
+  // Set the message in the modal
+document.getElementById("modalMessage").innerText = item + " added to cart!";
 
-  // Function to close the modal
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
+// Display the modal
+document.getElementById("myModal").style.display = "block";
 
-  // Close the modal if the user clicks outside of the modal content
-  window.onclick = function(event) {
-    let modal = document.getElementById("myModal");
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+// Hide the modal message after 2.3 seconds
+setTimeout(function() {
+  document.getElementById("myModal").style.display = "none";
+}, 2300); // 2300 milliseconds = 2.3 seconds
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+// Close the modal if the user clicks outside of the modal content
+window.onclick = function(event) {
+  let modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
   }
 </script>
   
